@@ -63,4 +63,15 @@ public class ArrayStack<T> implements Stack<T> {
     public Iterator<T> iterator() {
         return new ReverseArrayIterator<>(s, size, size);
     }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        for (int i = size - 1; i >= 0; i--) {
+            builder.append(s[i]);
+            builder.append(", ");
+        }
+        builder.setLength(builder.length() - 2);
+        return builder.toString();
+    }
 }

@@ -52,4 +52,17 @@ public class LinkedStack<T> implements Stack<T> {
     public Iterator<T> iterator() {
         return new SLLForwardIterator<>(head);
     }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        SLLNode<T> curr = head;
+        for (int i = 0; i < size; i++) {
+            builder.append(curr.data);
+            builder.append(", ");
+            curr = curr.next;
+        }
+        builder.setLength(builder.length() - 2);
+        return builder.toString();
+    }
 }
