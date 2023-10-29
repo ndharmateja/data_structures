@@ -42,4 +42,11 @@ public class SortUtils {
         }
     }
 
+    public static <T extends Comparable<T>> boolean isSorted(T[] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (SortUtils.less(arr[i + 1], arr[i]))
+                return false;
+        }
+        return true;
+    }
 }
