@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class Merge {
     private final static int CUTOFF = 7;
 
-    private static <T extends Comparable<T>> void merge(T[] arr, T[] aux, int lo, int mid, int hi) {
+    public static <T extends Comparable<T>> void merge(T[] arr, T[] aux, int lo, int mid, int hi) {
         // Copy elements from arr to aux
         for (int i = lo; i <= hi; i++) {
             aux[i] = arr[i];

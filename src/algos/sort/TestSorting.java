@@ -25,6 +25,11 @@ public class TestSorting {
         Merge.sort(sortedArray);
         TestUtils.doAssertion(SortUtils.isSorted(sortedArray),
                 "Merge sort failed, array not sorted: " + Arrays.toString(sortedArray));
+
+        SortUtils.shuffle(sortedArray);
+        BottomUpMerge.sort(sortedArray);
+        TestUtils.doAssertion(SortUtils.isSorted(sortedArray),
+                "Bottom-up Merge sort failed, array not sorted: " + Arrays.toString(sortedArray));
     }
 
     private static <T extends Comparable<T>> void test() {
