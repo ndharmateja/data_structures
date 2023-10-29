@@ -50,8 +50,8 @@ public class Merge {
 
         // Stop if already sorted
         // if arr[mid] <= arr[mid + 1]
-        // if (!SortUtils.less(arr[mid + 1], arr[mid]))
-        // return;
+        if (!SortUtils.less(arr[mid + 1], arr[mid]))
+            return;
 
         // Merge both halves
         merge(arr, aux, lo, mid, hi);
