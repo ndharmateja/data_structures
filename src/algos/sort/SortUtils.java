@@ -25,7 +25,7 @@ public class SortUtils {
      */
     //
     public static <T> void shuffle(T[] arr) {
-        int n = arr.length - 1;
+        int n = arr.length;
         Random r = new Random();
 
         // Start from the last element and swap one by one. We don't
