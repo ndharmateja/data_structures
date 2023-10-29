@@ -8,6 +8,14 @@ import data_structures.stack.Stack;
 import edu.princeton.cs.algs4.Point2D;
 
 public class ConvexHull {
+    /**
+     * Computes the convex hull points
+     * 
+     * @param points
+     * @return the hull points starting from the point with the lowest
+     *         y-coordinate and goes counter clockwise. the innermost point in the
+     *         stack is that first point.
+     */
     public static Stack<Point2D> convexHull(Point2D[] points) {
         Stack<Point2D> hull = new LinkedStack<>();
 
@@ -55,14 +63,18 @@ public class ConvexHull {
         // Get the stack of the convex hull
         // The innermost point in the stack is the first point
         Stack<Point2D> hull = convexHull(points);
-        Point2D[] hullArray = new Point2D[hull.size()];
 
-        // Print all the points in the hull
-        // Starting from the lowest y-coordinate point in the hull
+        // Put points from stack in reverse order into the array
+        // So the first point of the array is the first point
+        // of the hull
+        Point2D[] hullArray = new Point2D[hull.size()];
         int i = hullArray.length - 1;
         for (Point2D point : hull) {
             hullArray[i--] = point;
         }
+
+        // Print all the points in the hull
+        // Starting from the lowest y-coordinate point in the hull
         for (Point2D point2d : hullArray) {
             System.out.print(point2d + " -> ");
         }
