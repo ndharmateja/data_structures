@@ -7,6 +7,10 @@ public class SortUtils {
         return a.compareTo(b) < 0;
     }
 
+    public static <T extends Comparable<T>> boolean more(T a, T b) {
+        return a.compareTo(b) > 0;
+    }
+
     public static <T> void swap(T[] arr, int i, int j) {
         T temp = arr[i];
         arr[i] = arr[j];
