@@ -30,6 +30,21 @@ public class TestSorting {
         BottomUpMerge.sort(sortedArray);
         TestUtils.doAssertion(SortUtils.isSorted(sortedArray),
                 "Bottom-up Merge sort failed, array not sorted: " + Arrays.toString(sortedArray));
+
+        SortUtils.shuffle(sortedArray);
+        Quick.sort(sortedArray);
+        TestUtils.doAssertion(SortUtils.isSorted(sortedArray),
+                "Quick sort failed, array not sorted: " + Arrays.toString(sortedArray));
+
+        SortUtils.shuffle(sortedArray);
+        Quick3Way.sort(sortedArray);
+        TestUtils.doAssertion(SortUtils.isSorted(sortedArray),
+                "3 Way Quick sort failed, array not sorted: " + Arrays.toString(sortedArray));
+
+        SortUtils.shuffle(sortedArray);
+        Heap.sort(sortedArray);
+        TestUtils.doAssertion(SortUtils.isSorted(sortedArray),
+                "Heap sort failed, array not sorted: " + Arrays.toString(sortedArray));
     }
 
     private static <T extends Comparable<T>> void test() {
