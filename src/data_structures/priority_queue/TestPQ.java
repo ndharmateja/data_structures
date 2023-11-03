@@ -35,16 +35,21 @@ public class TestPQ {
             SortUtils.shuffle(elements);
 
             MinPQ<Integer> minPQ = new MinPQ<>();
+            TestUtils.doAssertion(minPQ.isEmpty());
             for (Integer element : elements) {
                 minPQ.insert(element);
             }
 
             MinPQ<Integer> minPQ2 = new MinPQ<>(elements);
+            TestUtils.doAssertion(minPQ2.size() == size);
 
             for (int i = 0; i < size; i++) {
                 TestUtils.doAssertion(minPQ.delMin() == i);
                 TestUtils.doAssertion(minPQ2.delMin() == i);
             }
+
+            TestUtils.doAssertion(minPQ.isEmpty());
+            TestUtils.doAssertion(minPQ2.isEmpty());
         }
     }
 
