@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.NoSuchElementException;
 
 @SuppressWarnings({ "unchecked", "unused" })
-public abstract class PQ<T extends Comparable<T>> {
+abstract class PQ<T extends Comparable<T>> {
     private static final int DEFAULT_CAPACITY = 5;
 
     protected T[] pq;
